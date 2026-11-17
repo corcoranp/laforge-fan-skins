@@ -1,4 +1,4 @@
-# Watchtower (DC): a personal fan skin for LaForge
+# Watchtower (DC): an unofficial fan skin for LaForge
 
 A skin in the manner of the Justice League's orbital Watchtower, in the rail
 layout, dark mode. A star field with the planet's blue limb glowing up from
@@ -7,14 +7,13 @@ below, a Metropolis-blue rail with a slowly turning station emblem
 watch. A blocked seat sends out a red distress beacon that pulses outward;
 the footer's need-you count becomes a noir yellow signal glowing in the sky.
 
-**This is a personal fan skin. It is not for distribution.** The characters,
-names and marks it evokes belong to their owners. It ships no official logos,
-sprites or artwork: everything is drawn with original CSS. Keep it in a
-private repository; do not publish, bundle or ship it with LaForge.
+**Unofficial fan work.** It is not affiliated with, endorsed or sponsored by the
+rights holders. The Justice League, the Watchtower and related characters are trademarks of DC Comics. It ships no official logos, sprites or artwork:
+everything is drawn with original CSS and system fonts.
 
-Install it into a forge:
+Install it into a forge (after `git clone https://github.com/corcoranp/laforge-private-skins`):
 
-    la skin install ~/projects/laforge/laforge-private-skins/dc-watchtower
+    la skin install ./laforge-private-skins/dc-watchtower
     la skin use dc-watchtower        # or pick "Skin: Watchtower (DC)" in the forge's palette (⌘K)
 
 Fonts: system faces only, nothing bundled and nothing loaded from the network.

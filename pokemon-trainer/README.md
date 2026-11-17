@@ -1,4 +1,4 @@
-# Trainer HUD (Pokémon): a personal fan skin for LaForge
+# Trainer HUD (Pokémon): an unofficial fan skin for LaForge
 
 A skin in the manner of a Pokémon trainer's handheld, in the rail layout,
 light mode. The rail is a red handheld with a lens and three status lights.
@@ -10,14 +10,13 @@ flashing when it needs you). The header asks "What will BILLING do? ▼",
 panes are battle text boxes around a Game Boy-green terminal, and the footer
 is the trainer card strip.
 
-**This is a personal fan skin. It is not for distribution.** The characters,
-names and marks it evokes belong to their owners. It ships no official logos,
-sprites or artwork: everything is drawn with original CSS. Keep it in a
-private repository; do not publish, bundle or ship it with LaForge.
+**Unofficial fan work.** It is not affiliated with, endorsed or sponsored by the
+rights holders. Pokémon is a trademark of Nintendo, Creatures Inc. and GAME FREAK inc. It ships no official logos, sprites or artwork:
+everything is drawn with original CSS and system fonts.
 
-Install it into a forge:
+Install it into a forge (after `git clone https://github.com/corcoranp/laforge-private-skins`):
 
-    la skin install ~/projects/laforge/laforge-private-skins/pokemon-trainer
+    la skin install ./laforge-private-skins/pokemon-trainer
     la skin use pokemon-trainer        # or pick "Skin: Trainer HUD" in the forge's palette (⌘K)
 
 Fonts: system faces only, nothing bundled and nothing loaded from the network.

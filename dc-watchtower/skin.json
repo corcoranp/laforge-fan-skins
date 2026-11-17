@@ -1,13 +1,15 @@
 {
   "name": "dc-watchtower",
   "label": "Watchtower (DC)",
-  "description": "A personal fan skin in the manner of the Justice League's Watchtower: an orbital station over the planet, deep-space navy with a Metropolis-blue rail, a noir signal in the sky for whoever needs you, and distress beacons on blocked seats. Not for distribution.",
+  "description": "An unofficial fan skin in the manner of the Justice League's Watchtower: an orbital station over the planet, deep-space navy with a Metropolis-blue rail, a noir signal in the sky for whoever needs you, and distress beacons on blocked seats. Not affiliated with the rights holders.",
   "version": "1",
-  "author": "personal",
-  "license": "personal use only; not for distribution",
+  "author": "corcoranp",
+  "license": "unofficial fan work; trademarks belong to their owners",
   "layout": "rail",
   "mode": "dark",
-  "css": ["skin.css"],
+  "css": [
+    "skin.css"
+  ],
   "terminal": {
     "background": "#070b16",
     "foreground": "#dbe6ff",

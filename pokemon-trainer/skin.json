@@ -1,13 +1,15 @@
 {
   "name": "pokemon-trainer",
   "label": "Trainer HUD",
-  "description": "A personal fan skin in the manner of a Pokémon trainer's handheld: a red capsule rail, your crew as a party with HP bars, battle text boxes for panes. Not for distribution.",
+  "description": "An unofficial fan skin in the manner of a Pokémon trainer's handheld: a red capsule rail, your crew as a party with HP bars, battle text boxes for panes. Not affiliated with the rights holders.",
   "version": "1",
-  "author": "personal",
-  "license": "personal use only; not for distribution",
+  "author": "corcoranp",
+  "license": "unofficial fan work; trademarks belong to their owners",
   "layout": "rail",
   "mode": "light",
-  "css": ["skin.css"],
+  "css": [
+    "skin.css"
+  ],
   "terminal": {
     "background": "#0f2a1a",
     "foreground": "#d8f0b8",

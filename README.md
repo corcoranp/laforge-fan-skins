@@ -1,8 +1,10 @@
-# LaForge private skins
+# LaForge fan skins
 
-Personal fan skins for [LaForge](https://github.com/RunOutcome/laforge). **Private, not for
-distribution.** The characters, names and marks they evoke belong to their owners; every drawing
-here is original CSS, with system fonts only. Keep this repository private.
+Unofficial fan skins for [LaForge](https://github.com/RunOutcome/laforge). **Not affiliated with,
+endorsed or sponsored by the rights holders.** Pokémon is a trademark of Nintendo, Creatures Inc.
+and GAME FREAK inc.; the Avengers are trademarks of Marvel; the Justice League and the Watchtower
+are trademarks of DC Comics. Every drawing here is original CSS with system fonts: no official
+logos, sprites or artwork.
 
 | Skin | Layout | Mode | Theme |
 | --- | --- | --- | --- |
@@ -12,7 +14,12 @@ here is original CSS, with system fonts only. Keep this repository private.
 
 Install one into a forge:
 
-    la skin install ~/projects/laforge/laforge-private-skins/pokemon-trainer
+    git clone https://github.com/corcoranp/laforge-private-skins
+    la skin install ./laforge-private-skins/pokemon-trainer
     la skin use pokemon-trainer      # or "Skin: …" in ⌘K
 
-Built against RunOutcome/laforge's skin format (docs/skins.md, main @ 1013985).
+Built against RunOutcome/laforge's skin format (docs/skins.md). Changes come in by pull request;
+`main` is protected.
+
+If you hold rights to any of these marks and want a skin taken down, open an issue and it will be
+removed.

@@ -1,13 +1,15 @@
 {
   "name": "avengers-mission-control",
   "label": "Mission Control (Avengers)",
-  "description": "A personal fan skin in the manner of the Avengers' command room: brushed gunmetal, red and gold armour plating, mission-briefing pane headers and a pulsing team alert. Not for distribution.",
+  "description": "An unofficial fan skin in the manner of the Avengers' command room: brushed gunmetal, red and gold armour plating, mission-briefing pane headers and a pulsing team alert. Not affiliated with the rights holders.",
   "version": "1",
-  "author": "personal",
-  "license": "personal use only; not for distribution",
+  "author": "corcoranp",
+  "license": "unofficial fan work; trademarks belong to their owners",
   "layout": "classic",
   "mode": "dark",
-  "css": ["skin.css"],
+  "css": [
+    "skin.css"
+  ],
   "terminal": {
     "background": "#0c0f13",
     "foreground": "#e4e9ef",
