@@ -14,8 +14,8 @@ logos, sprites or artwork.
 
 Install one into a forge:
 
-    git clone https://github.com/corcoranp/laforge-private-skins
-    la skin install ./laforge-private-skins/pokemon-trainer
+    git clone https://github.com/corcoranp/laforge-fan-skins
+    la skin install ./laforge-fan-skins/pokemon-trainer
     la skin use pokemon-trainer      # or "Skin: …" in ⌘K
 
 Built against RunOutcome/laforge's skin format (docs/skins.md). Changes come in by pull request;

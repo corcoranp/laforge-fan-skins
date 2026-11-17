@@ -11,9 +11,9 @@ the footer's need-you count becomes a noir yellow signal glowing in the sky.
 rights holders. The Justice League, the Watchtower and related characters are trademarks of DC Comics. It ships no official logos, sprites or artwork:
 everything is drawn with original CSS and system fonts.
 
-Install it into a forge (after `git clone https://github.com/corcoranp/laforge-private-skins`):
+Install it into a forge (after `git clone https://github.com/corcoranp/laforge-fan-skins`):
 
-    la skin install ./laforge-private-skins/dc-watchtower
+    la skin install ./laforge-fan-skins/dc-watchtower
     la skin use dc-watchtower        # or pick "Skin: Watchtower (DC)" in the forge's palette (⌘K)
 
 Fonts: system faces only, nothing bundled and nothing loaded from the network.
