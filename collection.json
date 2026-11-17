@@ -1,0 +1,25 @@
+{
+  "id": "laforge-fan-skins",
+  "name": "LaForge fan skins",
+  "description": "Unofficial fan skins: a Pokémon trainer handheld, an Avengers command room and the DC Watchtower. Not affiliated with the rights holders.",
+  "skins": [
+    {
+      "name": "pokemon-trainer",
+      "label": "Trainer HUD",
+      "description": "An unofficial fan skin in the manner of a Pokémon trainer's handheld: a red capsule rail, your crew as a party with HP bars, battle text boxes for panes. Not affiliated with the rights holders.",
+      "path": "pokemon-trainer"
+    },
+    {
+      "name": "avengers-mission-control",
+      "label": "Mission Control (Avengers)",
+      "description": "An unofficial fan skin in the manner of the Avengers' command room: brushed gunmetal, red and gold armour plating, mission-briefing pane headers and a pulsing team alert. Not affiliated with the rights holders.",
+      "path": "avengers-mission-control"
+    },
+    {
+      "name": "dc-watchtower",
+      "label": "Watchtower (DC)",
+      "description": "An unofficial fan skin in the manner of the Justice League's Watchtower: an orbital station over the planet, deep-space navy with a Metropolis-blue rail, a noir signal in the sky for whoever needs you, and distress beacons on blocked seats. Not affiliated with the rights holders.",
+      "path": "dc-watchtower"
+    }
+  ]
+}

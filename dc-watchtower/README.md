@@ -7,6 +7,8 @@ below, a Metropolis-blue rail with a slowly turning station emblem
 watch. A blocked seat sends out a red distress beacon that pulses outward;
 the footer's need-you count becomes a noir yellow signal glowing in the sky.
 
+It draws both light and dark: the forge's light/dark switch picks the mode.
+
 **Unofficial fan work.** It is not affiliated with, endorsed or sponsored by the
 rights holders. The Justice League, the Watchtower and related characters are trademarks of DC Comics. It ships no official logos, sprites or artwork:
 everything is drawn with original CSS and system fonts.

@@ -3,6 +3,26 @@
    evokes belong to their owners. All drawing is original CSS. Layout: classic. */
 
 :root[data-skin='avengers-mission-control'] {
+  --shadow-tab: none;
+  --font-display: 'DIN Condensed', 'Avenir Next Condensed', 'Bahnschrift Condensed', 'Roboto Condensed', 'Arial Narrow', sans-serif;
+  --font-ui: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Menlo, Consolas, ui-monospace, monospace;
+  --radius-pane: 3px;
+  --radius-dialog: 4px;
+  --radius-card: 3px;
+  --radius-mono: 2px;
+  --radius-control: 2px;
+  --radius-button: 2px;
+  --radius-button-sm: 2px;
+  --radius-chip: 2px;
+  --topbar-height: 50px;
+  --statusbar-height: 30px;
+  --pane-head-height: 34px;
+  --work-gap: 10px;
+  --pane-gap: 6px;
+}
+
+:root[data-skin='avengers-mission-control'][data-mode='dark'] {
   /* the skin's own colours */
   --m-red: #c8202a;
   --m-red-dk: #7c0f16;
@@ -46,23 +66,51 @@
   --scrim: rgba(4, 6, 9, 0.72);
   --e2: 0 4px 14px rgba(0, 0, 0, 0.55);
   --e3: 0 14px 40px rgba(0, 0, 0, 0.7);
-  --shadow-tab: none;
-  --font-display: 'DIN Condensed', 'Avenir Next Condensed', 'Bahnschrift Condensed', 'Roboto Condensed', 'Arial Narrow', sans-serif;
-  --font-ui: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'SF Mono', Menlo, Consolas, ui-monospace, monospace;
-  --radius-pane: 3px;
-  --radius-dialog: 4px;
-  --radius-card: 3px;
-  --radius-mono: 2px;
-  --radius-control: 2px;
-  --radius-button: 2px;
-  --radius-button-sm: 2px;
-  --radius-chip: 2px;
-  --topbar-height: 50px;
-  --statusbar-height: 30px;
-  --pane-head-height: 34px;
-  --work-gap: 10px;
-  --pane-gap: 6px;
+}
+
+:root[data-skin='avengers-mission-control'][data-mode='light'] {
+  /* daylight in the hangar: brushed aluminium, the red and gold kept */
+  --m-red: #c01c26;
+  --m-red-dk: #7c0f16;
+  --m-gold: #a87410;
+  --m-gold-lt: #7a5200;
+  --m-steel: #c9cfd6;
+  --m-steel-lt: #9aa3ae;
+  --m-arc: #0a8fb8;
+  --m-brush: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.35) 0 1px, transparent 1px 3px),
+    linear-gradient(180deg, #f2f4f6 0%, #dde1e6 55%, #cfd4da 100%);
+
+  --canvas: #e4e7eb;
+  --side: #dde1e6;
+  --sunken: #d3d8de;
+  --card: #f4f6f8;
+  --term: #fbfbfc;
+  --hover: rgba(168, 116, 16, 0.1);
+  --press: rgba(168, 116, 16, 0.18);
+  --line: #a9b1bb;
+  --line-2: #c9cfd6;
+  --tx: #141a22;
+  --tx-2: #3a4450;
+  --tx-3: #66717e;
+  --acc: #a87410;
+  --acc-500: #c88f22;
+  --acc-100: rgba(168, 116, 16, 0.16);
+  --acc-fill: #e8b23a;
+  --on-acc: #140d00;
+  --ai: #0a7fa6;
+  --ai-600: #08698a;
+  --ai-100: rgba(10, 127, 166, 0.16);
+  --ai-50: rgba(10, 127, 166, 0.08);
+  --red: #d0242c;
+  --red-50: rgba(208, 36, 44, 0.12);
+  --amber: #a87410;
+  --amber-50: rgba(232, 178, 58, 0.2);
+  --green: #1f8a35;
+  --todo: #7d8794;
+  --on-red: #ffffff;
+  --scrim: rgba(20, 26, 34, 0.45);
+  --e2: 0 4px 12px rgba(20, 26, 34, 0.18);
+  --e3: 0 14px 36px rgba(20, 26, 34, 0.28);
 }
 
 [data-skin='avengers-mission-control'] body,
@@ -439,6 +487,121 @@
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.16em;
+}
+
+
+/* ---------- light: the same command room by daylight ---------- */
+[data-skin='avengers-mission-control'][data-mode='light'] body,
+[data-skin='avengers-mission-control'][data-mode='light'] .forge {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(10, 143, 184, 0.07), transparent 70%),
+    repeating-linear-gradient(60deg, rgba(20, 26, 34, 0.025) 0 2px, transparent 2px 22px),
+    repeating-linear-gradient(-60deg, rgba(20, 26, 34, 0.025) 0 2px, transparent 2px 22px),
+    #e4e7eb;
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .topbar {
+  box-shadow: inset 0 -1px 0 #8a929c, 0 3px 0 var(--m-red), 0 5px 0 #e8b23a, 0 8px 16px rgba(20, 26, 34, 0.18);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .brand {
+  border-right-color: #a9b1bb;
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.7);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .brand::before {
+  box-shadow: 0 0 10px rgba(10, 143, 184, 0.55), 0 0 0 2px #8a929c;
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .tab {
+  border-color: #8a929c;
+  background: linear-gradient(180deg, #f7f8fa, #d9dee4);
+  color: var(--tx-2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .tab:hover {
+  background: linear-gradient(180deg, #ffffff, #e4e8ed);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .tab.is-active {
+  background: linear-gradient(180deg, #e2343c 0%, var(--m-red) 45%, var(--m-red-dk) 100%);
+  color: #fff;
+  border-color: #5a0a10;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -3px 0 #e8b23a;
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .tab-count {
+  background: rgba(20, 26, 34, 0.12);
+  color: var(--tx);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .tab.is-active .tab-count {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .new-pane-btn,
+[data-skin='avengers-mission-control'][data-mode='light'] .cmd-btn {
+  border-color: #8a6410;
+  background: linear-gradient(180deg, #ffd877, #e8b23a 50%, #c99428);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .cmd-btn {
+  border-color: #8a929c;
+  background: linear-gradient(180deg, #ffffff, #d9dee4);
+  color: var(--tx);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .cmd-btn kbd {
+  background: rgba(20, 26, 34, 0.1);
+  color: var(--tx-2);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .agents-btn.is-open {
+  background: #e8b23a;
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .pane {
+  border-color: #8a929c;
+  box-shadow: 0 0 0 1px #c3c9d0, 0 8px 20px rgba(20, 26, 34, 0.14);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .pane.is-focused,
+[data-skin='avengers-mission-control'][data-mode='light'] .pane[data-active='true'] {
+  border-color: #8a6410;
+  box-shadow: 0 0 0 1px var(--m-gold), 0 0 18px rgba(168, 116, 16, 0.18), 0 8px 20px rgba(20, 26, 34, 0.14);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .pane-head {
+  border-bottom-color: #8a929c;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 0 #c3c9d0;
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .pane[data-active='true'] .pane-head {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 4px 0 0 var(--m-red), inset 7px 0 0 #e8b23a, 0 1px 0 var(--m-gold);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .pane[data-status='blocked'] .pane-head,
+[data-skin='avengers-mission-control'][data-mode='light'] .pane[data-status='error'] .pane-head {
+  background:
+    repeating-linear-gradient(-45deg, rgba(208, 36, 44, 0.16) 0 10px, rgba(0, 0, 0, 0) 10px 20px),
+    var(--m-brush);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .chip {
+  background: #141a22;
+  color: #bff4ff;
+  border-color: rgba(10, 143, 184, 0.5);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .badge {
+  border-color: rgba(20, 26, 34, 0.45);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .badge-working {
+  background: #e8b23a;
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .ask .ask-allow,
+[data-skin='avengers-mission-control'][data-mode='light'] .ask .ask-deny {
+  border-color: rgba(20, 26, 34, 0.45);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .statusbar {
+  box-shadow: 0 -3px 0 #e8b23a, 0 -5px 0 var(--m-red), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .sb-session {
+  background: linear-gradient(180deg, #ffd877, #e8b23a);
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .agents,
+[data-skin='avengers-mission-control'][data-mode='light'] .palette,
+[data-skin='avengers-mission-control'][data-mode='light'] .help,
+[data-skin='avengers-mission-control'][data-mode='light'] .menu {
+  background: linear-gradient(180deg, #f7f8fa, #e6e9ed);
+  border-color: #8a929c;
+}
+[data-skin='avengers-mission-control'][data-mode='light'] .palette li.is-active {
+  background: linear-gradient(90deg, rgba(200, 32, 42, 0.9), rgba(200, 32, 42, 0.2));
 }
 
 /* ---------- motion ---------- */

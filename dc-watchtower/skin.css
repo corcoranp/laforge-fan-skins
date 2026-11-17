@@ -3,6 +3,26 @@
    evokes belong to their owners. All drawing is original CSS. Layout: rail. */
 
 :root[data-skin='dc-watchtower'] {
+  --shadow-tab: none;
+  --font-display: Futura, 'Century Gothic', 'Avenir Next', 'Trebuchet MS', sans-serif;
+  --font-ui: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Menlo, Consolas, ui-monospace, monospace;
+  --radius-pane: 14px;
+  --radius-dialog: 16px;
+  --radius-card: 12px;
+  --radius-control: 8px;
+  --radius-button: 999px;
+  --radius-button-sm: 999px;
+  --radius-chip: 999px;
+  --rail-width: 248px;
+  --topbar-height: 42px;
+  --statusbar-height: 34px;
+  --pane-head-height: 32px;
+  --work-gap: 10px;
+  --pane-gap: 6px;
+}
+
+:root[data-skin='dc-watchtower'][data-mode='dark'] {
   /* the skin's own colours */
   --w-void: #040712;
   --w-navy: #0a1430;
@@ -48,23 +68,53 @@
   --scrim: rgba(2, 4, 12, 0.72);
   --e2: 0 6px 20px rgba(0, 0, 0, 0.5);
   --e3: 0 18px 50px rgba(0, 0, 0, 0.7);
-  --shadow-tab: none;
-  --font-display: Futura, 'Century Gothic', 'Avenir Next', 'Trebuchet MS', sans-serif;
-  --font-ui: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'SF Mono', Menlo, Consolas, ui-monospace, monospace;
-  --radius-pane: 14px;
-  --radius-dialog: 16px;
-  --radius-card: 12px;
-  --radius-control: 8px;
-  --radius-button: 999px;
-  --radius-button-sm: 999px;
-  --radius-chip: 999px;
-  --rail-width: 248px;
-  --topbar-height: 42px;
-  --statusbar-height: 34px;
-  --pane-head-height: 32px;
-  --work-gap: 10px;
-  --pane-gap: 6px;
+}
+
+:root[data-skin='dc-watchtower'][data-mode='light'] {
+  /* the Watchtower by day: the station's blue hull, a bright sky over the planet */
+  --w-void: #eaf1ff;
+  --w-navy: #0a1430;
+  --w-deep: #0d1a3d;
+  --w-blue: #2457e0;
+  --w-blue-lt: #2f6bff;
+  --w-sky: #1d55d8;
+  --w-red: #d42435;
+  --w-signal: #ffd23f;
+  --w-noir: #15171c;
+  --w-steel: #55648a;
+  --w-glass: rgba(47, 107, 255, 0.06);
+
+  --canvas: var(--w-void);
+  --side: #071029;
+  --sunken: #dfe8fb;
+  --card: #ffffff;
+  --term: #fbfcff;
+  --hover: rgba(47, 107, 255, 0.08);
+  --press: rgba(47, 107, 255, 0.15);
+  --line: #b9c8ea;
+  --line-2: #d6e0f5;
+  --tx: #0b1630;
+  --tx-2: #34446a;
+  --tx-3: #63719a;
+  --acc: #1d55d8;
+  --acc-500: #2f6bff;
+  --acc-100: rgba(47, 107, 255, 0.14);
+  --acc-fill: #2f6bff;
+  --on-acc: #ffffff;
+  --ai: #1d55d8;
+  --ai-600: #1644b8;
+  --ai-100: rgba(29, 85, 216, 0.14);
+  --ai-50: rgba(29, 85, 216, 0.07);
+  --red: #d42435;
+  --red-50: rgba(212, 36, 53, 0.1);
+  --amber: #a87a00;
+  --amber-50: rgba(255, 210, 63, 0.22);
+  --green: #12935a;
+  --todo: #7a86a6;
+  --on-red: #ffffff;
+  --scrim: rgba(11, 22, 48, 0.4);
+  --e2: 0 6px 18px rgba(11, 22, 48, 0.12);
+  --e3: 0 18px 46px rgba(11, 22, 48, 0.22);
 }
 
 /* the view out of the station: a star field and the planet's limb */
@@ -666,6 +716,173 @@
   border-bottom: 1px solid rgba(255, 210, 63, 0.4);
   text-transform: uppercase;
   letter-spacing: 0.16em;
+}
+
+/* light: the rail is still the station's hull at night */
+[data-skin='dc-watchtower'][data-mode='light'] .rail {
+  --w-void: #040712;
+  --w-navy: #0a1430;
+  --w-deep: #0d1a3d;
+  --w-blue: #2f6bff;
+  --w-blue-lt: #6f9dff;
+  --w-sky: #8fc4ff;
+  --w-red: #e8323f;
+  --w-signal: #ffd23f;
+  --w-noir: #15171c;
+  --w-steel: #8a97b8;
+  --w-glass: rgba(120, 160, 255, 0.07);
+  --canvas: var(--w-void);
+  --side: #071029;
+  --sunken: #030510;
+  --card: #0b1430;
+  --term: #070b16;
+  --hover: rgba(111, 157, 255, 0.1);
+  --press: rgba(111, 157, 255, 0.18);
+  --line: #1f2d57;
+  --line-2: #141e3c;
+  --tx: #eaf0ff;
+  --tx-2: #b4c2e4;
+  --tx-3: #7383a8;
+  --acc: var(--w-blue-lt);
+  --acc-500: var(--w-sky);
+  --acc-100: rgba(47, 107, 255, 0.22);
+  --acc-fill: var(--w-blue);
+  --on-acc: #ffffff;
+  --ai: var(--w-sky);
+  --ai-600: #b8daff;
+  --ai-100: rgba(143, 196, 255, 0.2);
+  --ai-50: rgba(143, 196, 255, 0.1);
+  --red: #ff4357;
+  --red-50: rgba(255, 67, 87, 0.15);
+  --amber: var(--w-signal);
+  --amber-50: rgba(255, 210, 63, 0.14);
+  --green: #4fdc98;
+  --todo: #5d6a8c;
+  --on-red: #ffffff;
+  --scrim: rgba(2, 4, 12, 0.72);
+  --e2: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --e3: 0 18px 50px rgba(0, 0, 0, 0.7);
+}
+
+[data-skin='dc-watchtower'][data-mode='light'] body,
+[data-skin='dc-watchtower'][data-mode='light'] .forge {
+  background:
+    radial-gradient(ellipse 120% 60% at 70% 140%, rgba(47, 107, 255, 0.28) 0, rgba(47, 107, 255, 0.08) 38%, transparent 55%),
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(212, 36, 53, 0.06), transparent 60%),
+    linear-gradient(180deg, #f6f9ff 0%, #e6eefd 100%);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .rail-header {
+  border-bottom-color: #c9d6f2;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(234, 241, 255, 0.7));
+  box-shadow: inset 0 -1px 0 rgba(47, 107, 255, 0.12);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .rail-when {
+  border-right-color: #c9d6f2;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .rail-time,
+[data-skin='dc-watchtower'][data-mode='light'] .rail-space-title {
+  color: #0b1630;
+  text-shadow: none;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .icon-btn:hover {
+  background: rgba(47, 107, 255, 0.14);
+  color: #0b1630;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .cmd-btn {
+  border-color: #b9c8ea;
+  background: linear-gradient(180deg, #ffffff, #e6eefd);
+  color: #0b1630;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .cmd-btn kbd {
+  background: rgba(11, 22, 48, 0.08);
+  color: #34446a;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .tab {
+  border-color: #c3d1ef;
+  background: rgba(255, 255, 255, 0.85);
+  color: #34446a;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .tab:hover {
+  border-color: #9fb4e4;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .tab.is-active {
+  background: linear-gradient(180deg, #2f6bff, #1d4fd1);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(47, 107, 255, 0.3);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .tab-count {
+  background: rgba(11, 22, 48, 0.08);
+  color: #0b1630;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .tab.is-active .tab-count {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .tab[data-status='blocked'],
+[data-skin='dc-watchtower'][data-mode='light'] .tab[data-status='error'] {
+  border-color: rgba(212, 36, 53, 0.7);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .pane {
+  border-color: #c3d1ef;
+  box-shadow: 0 8px 24px rgba(11, 22, 48, 0.1);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .pane.is-focused,
+[data-skin='dc-watchtower'][data-mode='light'] .pane[data-active='true'] {
+  border-color: rgba(47, 107, 255, 0.7);
+  box-shadow: 0 0 0 1px rgba(47, 107, 255, 0.25), 0 0 22px rgba(47, 107, 255, 0.16), 0 8px 24px rgba(11, 22, 48, 0.1);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .pane[data-status='blocked'],
+[data-skin='dc-watchtower'][data-mode='light'] .pane[data-status='error'] {
+  border-color: rgba(212, 36, 53, 0.75);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .pane-head {
+  background: linear-gradient(180deg, #f3f7ff, #e4ecfc);
+  border-bottom-color: #c9d6f2;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .pane[data-active='true'] .pane-head {
+  background: linear-gradient(180deg, #dfe9ff, #cddcff);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .pane[data-status='blocked'] .pane-head,
+[data-skin='dc-watchtower'][data-mode='light'] .pane[data-status='error'] .pane-head {
+  background: linear-gradient(180deg, #ffe6e9, #fbd3d8);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .chip {
+  background: rgba(29, 85, 216, 0.1);
+  border-color: rgba(29, 85, 216, 0.3);
+  color: #1d55d8;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .badge-working {
+  background: rgba(47, 107, 255, 0.14);
+  color: #1644b8;
+  box-shadow: inset 0 0 0 1px rgba(47, 107, 255, 0.5);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .badge-done {
+  background: rgba(18, 147, 90, 0.12);
+  color: #0d6e43;
+  box-shadow: inset 0 0 0 1px rgba(18, 147, 90, 0.45);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .badge-idle {
+  background: rgba(93, 106, 140, 0.14);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .ask .ask-allow {
+  color: #ffffff;
+}
+[data-skin='dc-watchtower'][data-mode='light'] .rail-footer {
+  border-top-color: #c9d6f2;
+  background: linear-gradient(180deg, rgba(234, 241, 255, 0.7), rgba(255, 255, 255, 0.92));
+}
+[data-skin='dc-watchtower'][data-mode='light'] .agents,
+[data-skin='dc-watchtower'][data-mode='light'] .palette,
+[data-skin='dc-watchtower'][data-mode='light'] .help,
+[data-skin='dc-watchtower'][data-mode='light'] .menu {
+  background: linear-gradient(180deg, #ffffff, #eef3ff);
+  border-color: rgba(47, 107, 255, 0.35);
+  box-shadow: 0 0 24px rgba(47, 107, 255, 0.12), var(--e3);
+}
+[data-skin='dc-watchtower'][data-mode='light'] .palette li.is-active {
+  background: linear-gradient(90deg, rgba(47, 107, 255, 0.85), rgba(47, 107, 255, 0.2));
+  color: #fff;
 }
 
 /* ---------- motion ---------- */

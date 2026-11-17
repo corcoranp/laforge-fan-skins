@@ -10,6 +10,8 @@ flashing when it needs you). The header asks "What will BILLING do? ▼",
 panes are battle text boxes around a Game Boy-green terminal, and the footer
 is the trainer card strip.
 
+It draws both light and dark: the forge's light/dark switch picks the mode.
+
 **Unofficial fan work.** It is not affiliated with, endorsed or sponsored by the
 rights holders. Pokémon is a trademark of Nintendo, Creatures Inc. and GAME FREAK inc. It ships no official logos, sprites or artwork:
 everything is drawn with original CSS and system fonts.

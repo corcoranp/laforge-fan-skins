@@ -8,6 +8,8 @@ briefings with corner brackets. Blocked panes raise a pulsing red TEAM ALERT
 with hazard stripes across the header; done reads Debrief, idle reads
 Standing by.
 
+It draws both light and dark: the forge's light/dark switch picks the mode.
+
 **Unofficial fan work.** It is not affiliated with, endorsed or sponsored by the
 rights holders. The Avengers and related characters are trademarks of Marvel. It ships no official logos, sprites or artwork:
 everything is drawn with original CSS and system fonts.
