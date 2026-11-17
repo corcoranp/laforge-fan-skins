@@ -12,9 +12,9 @@ Standing by.
 rights holders. The Avengers and related characters are trademarks of Marvel. It ships no official logos, sprites or artwork:
 everything is drawn with original CSS and system fonts.
 
-Install it into a forge (after `git clone https://github.com/corcoranp/laforge-private-skins`):
+Install it into a forge (after `git clone https://github.com/corcoranp/laforge-fan-skins`):
 
-    la skin install ./laforge-private-skins/avengers-mission-control
+    la skin install ./laforge-fan-skins/avengers-mission-control
     la skin use avengers-mission-control        # or pick "Skin: Mission Control (Avengers)" in the forge's palette (⌘K)
 
 Fonts: system faces only, nothing bundled and nothing loaded from the network.

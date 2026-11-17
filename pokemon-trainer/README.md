@@ -14,9 +14,9 @@ is the trainer card strip.
 rights holders. Pokémon is a trademark of Nintendo, Creatures Inc. and GAME FREAK inc. It ships no official logos, sprites or artwork:
 everything is drawn with original CSS and system fonts.
 
-Install it into a forge (after `git clone https://github.com/corcoranp/laforge-private-skins`):
+Install it into a forge (after `git clone https://github.com/corcoranp/laforge-fan-skins`):
 
-    la skin install ./laforge-private-skins/pokemon-trainer
+    la skin install ./laforge-fan-skins/pokemon-trainer
     la skin use pokemon-trainer        # or pick "Skin: Trainer HUD" in the forge's palette (⌘K)
 
 Fonts: system faces only, nothing bundled and nothing loaded from the network.
