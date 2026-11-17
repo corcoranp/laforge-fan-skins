@@ -1,0 +1,726 @@
+/* Watchtower (DC): a personal fan skin in the manner of the Justice League's
+   orbital Watchtower. Not for distribution; the characters and marks it
+   evokes belong to their owners. All drawing is original CSS. Layout: rail. */
+
+:root[data-skin='dc-watchtower'] {
+  /* the skin's own colours */
+  --w-void: #040712;
+  --w-navy: #0a1430;
+  --w-deep: #0d1a3d;
+  --w-blue: #2f6bff;
+  --w-blue-lt: #6f9dff;
+  --w-sky: #8fc4ff;
+  --w-red: #e8323f;
+  --w-signal: #ffd23f;
+  --w-noir: #15171c;
+  --w-steel: #8a97b8;
+  --w-glass: rgba(120, 160, 255, 0.07);
+
+  /* the forge's tokens */
+  --canvas: var(--w-void);
+  --side: #071029;
+  --sunken: #030510;
+  --card: #0b1430;
+  --term: #070b16;
+  --hover: rgba(111, 157, 255, 0.1);
+  --press: rgba(111, 157, 255, 0.18);
+  --line: #1f2d57;
+  --line-2: #141e3c;
+  --tx: #eaf0ff;
+  --tx-2: #b4c2e4;
+  --tx-3: #7383a8;
+  --acc: var(--w-blue-lt);
+  --acc-500: var(--w-sky);
+  --acc-100: rgba(47, 107, 255, 0.22);
+  --acc-fill: var(--w-blue);
+  --on-acc: #ffffff;
+  --ai: var(--w-sky);
+  --ai-600: #b8daff;
+  --ai-100: rgba(143, 196, 255, 0.2);
+  --ai-50: rgba(143, 196, 255, 0.1);
+  --red: #ff4357;
+  --red-50: rgba(255, 67, 87, 0.15);
+  --amber: var(--w-signal);
+  --amber-50: rgba(255, 210, 63, 0.14);
+  --green: #4fdc98;
+  --todo: #5d6a8c;
+  --on-red: #ffffff;
+  --scrim: rgba(2, 4, 12, 0.72);
+  --e2: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --e3: 0 18px 50px rgba(0, 0, 0, 0.7);
+  --shadow-tab: none;
+  --font-display: Futura, 'Century Gothic', 'Avenir Next', 'Trebuchet MS', sans-serif;
+  --font-ui: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Menlo, Consolas, ui-monospace, monospace;
+  --radius-pane: 14px;
+  --radius-dialog: 16px;
+  --radius-card: 12px;
+  --radius-control: 8px;
+  --radius-button: 999px;
+  --radius-button-sm: 999px;
+  --radius-chip: 999px;
+  --rail-width: 248px;
+  --topbar-height: 42px;
+  --statusbar-height: 34px;
+  --pane-head-height: 32px;
+  --work-gap: 10px;
+  --pane-gap: 6px;
+}
+
+/* the view out of the station: a star field and the planet's limb */
+[data-skin='dc-watchtower'] body,
+[data-skin='dc-watchtower'] .forge {
+  background:
+    radial-gradient(1px 1px at 12% 18%, rgba(255, 255, 255, 0.8), transparent 60%),
+    radial-gradient(1px 1px at 27% 72%, rgba(255, 255, 255, 0.55), transparent 60%),
+    radial-gradient(1.5px 1.5px at 41% 33%, rgba(200, 220, 255, 0.85), transparent 60%),
+    radial-gradient(1px 1px at 58% 12%, rgba(255, 255, 255, 0.6), transparent 60%),
+    radial-gradient(1px 1px at 66% 58%, rgba(255, 255, 255, 0.5), transparent 60%),
+    radial-gradient(1.5px 1.5px at 79% 26%, rgba(255, 255, 255, 0.85), transparent 60%),
+    radial-gradient(1px 1px at 88% 81%, rgba(200, 220, 255, 0.6), transparent 60%),
+    radial-gradient(1px 1px at 94% 9%, rgba(255, 255, 255, 0.7), transparent 60%),
+    radial-gradient(ellipse 120% 60% at 70% 140%, rgba(47, 107, 255, 0.45) 0, rgba(47, 107, 255, 0.12) 38%, transparent 55%),
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(232, 50, 63, 0.08), transparent 60%),
+    var(--w-void);
+}
+
+/* ---------- the rail: the station's hull ---------- */
+[data-skin='dc-watchtower'] .rail {
+  gap: 6px;
+  padding: 0 0 12px;
+  border-right: 1px solid #22356e;
+  background:
+    linear-gradient(90deg, transparent calc(100% - 3px), rgba(47, 107, 255, 0.5) calc(100% - 3px)),
+    linear-gradient(180deg, #0c1a45 0%, #071029 40%, #050b1f 100%);
+  box-shadow: 6px 0 30px rgba(47, 107, 255, 0.12);
+}
+
+[data-skin='dc-watchtower'] .rail-machine {
+  position: relative;
+  flex: none;
+  min-height: 96px;
+  padding: 16px 16px 14px 74px;
+  justify-content: center;
+  border-bottom: 1px solid #22356e;
+  background:
+    linear-gradient(180deg, rgba(47, 107, 255, 0.28), rgba(47, 107, 255, 0.06)),
+    #0a1640;
+  overflow: hidden;
+}
+
+/* the station seen from outside: a ring and a spire */
+[data-skin='dc-watchtower'] .rail-machine::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  margin-top: -23px;
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--w-sky), var(--w-sky)) 50% 0 / 3px 46px no-repeat,
+    radial-gradient(circle, #ffffff 0 4px, var(--w-sky) 5px 7px, transparent 8px),
+    radial-gradient(circle, transparent 0 15px, rgba(143, 196, 255, 0.9) 16px 18px, transparent 19px),
+    radial-gradient(circle, transparent 0 21px, rgba(143, 196, 255, 0.35) 22px 23px, transparent 23.5px);
+  filter: drop-shadow(0 0 6px rgba(111, 157, 255, 0.8));
+  animation: wt-orbit 18s linear infinite;
+}
+
+/* a lit planet limb under the machine name */
+[data-skin='dc-watchtower'] .rail-machine::after {
+  content: '';
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  bottom: -64px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(111, 170, 255, 0.55), rgba(47, 107, 255, 0.15) 45%, transparent 70%);
+  box-shadow: 0 -1px 0 rgba(160, 200, 255, 0.6);
+  pointer-events: none;
+}
+
+[data-skin='dc-watchtower'] .rail-machine .rail-label {
+  font-size: 0;
+}
+
+[data-skin='dc-watchtower'] .rail-machine .rail-label::after {
+  content: 'Watchtower · Orbit';
+  font: 600 9.5px/1 var(--font-ui);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--w-sky);
+}
+
+[data-skin='dc-watchtower'] .rail-host {
+  position: relative;
+  z-index: 1;
+  margin-top: 4px;
+  font: 500 24px/1 var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 14px rgba(111, 157, 255, 0.7);
+}
+
+[data-skin='dc-watchtower'] .rail-title {
+  padding: 12px 16px 4px;
+  font: 600 10.5px/1 var(--font-ui);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--w-steel);
+}
+
+[data-skin='dc-watchtower'] .rail-title .rail-count {
+  color: var(--w-sky);
+}
+
+/* spaces: sectors on the station's map */
+[data-skin='dc-watchtower'] .rail-space {
+  position: relative;
+  min-height: 34px;
+  margin: 0 10px;
+  padding: 0 12px 0 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--tx-2);
+  font: 500 14px/1 var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+[data-skin='dc-watchtower'] .rail-space::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  border-radius: 50%;
+  background: var(--w-steel);
+}
+
+[data-skin='dc-watchtower'] .rail-space[data-index='0']::before { background: var(--w-blue-lt); }
+[data-skin='dc-watchtower'] .rail-space[data-index='1']::before { background: var(--w-red); }
+[data-skin='dc-watchtower'] .rail-space[data-index='2']::before { background: var(--w-signal); }
+[data-skin='dc-watchtower'] .rail-space[data-index='3']::before { background: var(--green); }
+[data-skin='dc-watchtower'] .rail-space[data-index='4']::before { background: #b48cff; }
+[data-skin='dc-watchtower'] .rail-space[data-index='5']::before { background: #5cd6ff; }
+[data-skin='dc-watchtower'] .rail-space[data-index='6']::before { background: #ff8a5c; }
+[data-skin='dc-watchtower'] .rail-space[data-index='7']::before { background: #e0e6f5; }
+
+[data-skin='dc-watchtower'] .rail-space .rail-count {
+  font: 600 12px/1 var(--font-mono);
+  color: var(--tx-3);
+}
+
+[data-skin='dc-watchtower'] .rail-space:hover {
+  background: var(--w-glass);
+  color: var(--tx);
+}
+
+[data-skin='dc-watchtower'] .rail-space.is-active {
+  border-color: rgba(111, 157, 255, 0.55);
+  background: linear-gradient(90deg, rgba(47, 107, 255, 0.35), rgba(47, 107, 255, 0.08));
+  color: #fff;
+  box-shadow: 0 0 16px rgba(47, 107, 255, 0.25), inset 0 0 12px rgba(111, 157, 255, 0.15);
+}
+
+[data-skin='dc-watchtower'] .rail-space.is-active .rail-count {
+  color: var(--w-sky);
+}
+
+[data-skin='dc-watchtower'] .rail-add {
+  min-height: 30px;
+  margin: 2px 10px 0;
+  border: 1px dashed #2a3c75;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--w-steel);
+  font: 600 11px/1 var(--font-ui);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+[data-skin='dc-watchtower'] .rail-add:hover {
+  border-color: var(--w-blue-lt);
+  color: var(--w-sky);
+  background: var(--w-glass);
+}
+
+[data-skin='dc-watchtower'] .rail-new-space input {
+  border-radius: 8px;
+  border-color: #2a3c75;
+  background: #050a1c;
+}
+
+/* the crew: members on watch, with a beacon when one is in trouble */
+[data-skin='dc-watchtower'] .crew-row {
+  position: relative;
+  gap: 10px;
+  margin: 0 10px 4px;
+  padding: 8px 10px;
+  border: 1px solid #16234a;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(20, 34, 80, 0.7), rgba(10, 18, 44, 0.7));
+  color: var(--tx-2);
+}
+
+[data-skin='dc-watchtower'] .crew-row:hover {
+  border-color: #2a3c75;
+}
+
+[data-skin='dc-watchtower'] .crew-row.is-current {
+  border-color: rgba(111, 157, 255, 0.6);
+  background: linear-gradient(180deg, rgba(47, 107, 255, 0.28), rgba(20, 34, 80, 0.7));
+}
+
+[data-skin='dc-watchtower'] .crew-row[data-status] .crew-bar,
+[data-skin='dc-watchtower'] .crew-row .crew-bar {
+  width: 10px;
+  height: 10px;
+  align-self: flex-start;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: var(--todo);
+  box-shadow: 0 0 0 3px rgba(93, 106, 140, 0.2);
+}
+
+[data-skin='dc-watchtower'] .crew-row[data-status='working'] .crew-bar {
+  background: var(--w-blue-lt);
+  box-shadow: 0 0 0 3px rgba(111, 157, 255, 0.25), 0 0 10px var(--w-blue-lt);
+  animation: wt-breathe 2.4s ease-in-out infinite;
+}
+
+[data-skin='dc-watchtower'] .crew-row[data-status='done'] .crew-bar {
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(79, 220, 152, 0.22);
+}
+
+[data-skin='dc-watchtower'] .crew-row[data-status='blocked'],
+[data-skin='dc-watchtower'] .crew-row[data-status='error'] {
+  border-color: rgba(255, 67, 87, 0.6);
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 67, 87, 0.05) 0 2px, transparent 2px 4px),
+    linear-gradient(180deg, rgba(90, 14, 28, 0.75), rgba(30, 8, 20, 0.75));
+}
+
+[data-skin='dc-watchtower'] .crew-row[data-status='blocked'] .crew-bar,
+[data-skin='dc-watchtower'] .crew-row[data-status='error'] .crew-bar {
+  background: var(--red);
+  animation: wt-distress 1.5s ease-out infinite;
+}
+
+[data-skin='dc-watchtower'] .crew-name {
+  font: 600 13.5px/1.15 var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tx);
+}
+
+[data-skin='dc-watchtower'] .crew-sub {
+  font: 600 10.5px/1.3 var(--font-ui);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tx-3);
+}
+
+[data-skin='dc-watchtower'] .crew-row[data-status='working'] .crew-sub { color: var(--w-sky); }
+[data-skin='dc-watchtower'] .crew-row[data-status='done'] .crew-sub { color: var(--green); }
+[data-skin='dc-watchtower'] .crew-row[data-status='blocked'] .crew-sub,
+[data-skin='dc-watchtower'] .crew-row[data-status='error'] .crew-sub { color: #ff8090; }
+
+[data-skin='dc-watchtower'] .crew-msg {
+  font: 500 11.5px/1.35 var(--font-ui);
+  color: var(--tx-2);
+}
+
+[data-skin='dc-watchtower'] .rail-empty {
+  padding: 0 16px;
+  color: var(--tx-3);
+}
+
+/* ---------- the header: the station's main display ---------- */
+[data-skin='dc-watchtower'] .rail-header {
+  height: 70px;
+  padding: 0 18px;
+  border-bottom: 1px solid #1a2853;
+  background: linear-gradient(180deg, rgba(10, 22, 64, 0.85), rgba(5, 10, 30, 0.6));
+  box-shadow: inset 0 -1px 0 rgba(111, 157, 255, 0.15);
+}
+
+[data-skin='dc-watchtower'] .rail-when {
+  align-items: flex-start;
+  padding: 6px 14px 6px 0;
+  margin-right: 6px;
+  border-right: 1px solid #22356e;
+  font: 600 10.5px/1.3 var(--font-ui);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--w-steel);
+}
+
+[data-skin='dc-watchtower'] .rail-time {
+  font: 500 19px/1.1 var(--font-display);
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+[data-skin='dc-watchtower'] .rail-space-title {
+  font: 500 30px/1 var(--font-display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 18px rgba(111, 157, 255, 0.55);
+}
+
+[data-skin='dc-watchtower'] .rail-space-title::before {
+  content: 'Sector ';
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  vertical-align: middle;
+  color: var(--w-sky);
+  text-shadow: none;
+}
+
+[data-skin='dc-watchtower'] .icon-btn {
+  color: var(--tx-2);
+  border-radius: 999px;
+}
+
+[data-skin='dc-watchtower'] .icon-btn:hover {
+  background: rgba(47, 107, 255, 0.25);
+  color: #fff;
+}
+
+[data-skin='dc-watchtower'] .agents-btn.is-open {
+  background: var(--w-blue);
+  color: #fff;
+}
+
+[data-skin='dc-watchtower'] .cmd-btn,
+[data-skin='dc-watchtower'] .new-pane-btn {
+  height: 30px;
+  border: 1px solid rgba(111, 157, 255, 0.5);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #2f6bff, #1d4fd1);
+  color: #fff;
+  font: 600 12px/1 var(--font-ui);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 0 14px rgba(47, 107, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+[data-skin='dc-watchtower'] .cmd-btn {
+  background: linear-gradient(180deg, #1a2550, #0f1838);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+[data-skin='dc-watchtower'] .cmd-btn kbd {
+  border: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--w-sky);
+}
+
+/* ---------- tabs: glass chips ---------- */
+[data-skin='dc-watchtower'] .topbar {
+  background: transparent;
+  border-bottom: 0;
+}
+
+[data-skin='dc-watchtower'] .tab {
+  height: 30px;
+  padding: 0 14px;
+  border: 1px solid #1d2b58;
+  border-radius: 999px;
+  background: rgba(12, 22, 54, 0.75);
+  color: var(--tx-2);
+  font: 500 13px/1 var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+[data-skin='dc-watchtower'] .tab:hover {
+  border-color: #2a3c75;
+  color: var(--tx);
+}
+
+[data-skin='dc-watchtower'] .tab.is-active {
+  border-color: var(--w-blue-lt);
+  background: linear-gradient(180deg, rgba(47, 107, 255, 0.55), rgba(29, 79, 209, 0.45));
+  color: #fff;
+  box-shadow: 0 0 16px rgba(47, 107, 255, 0.4);
+}
+
+[data-skin='dc-watchtower'] .tab.is-active .tab-name,
+[data-skin='dc-watchtower'] .tab.is-active .tab-name.is-auto,
+[data-skin='dc-watchtower'] .tab.is-active .tab-actions button {
+  color: #fff;
+}
+
+[data-skin='dc-watchtower'] .tab-count {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-family: var(--font-mono);
+}
+
+[data-skin='dc-watchtower'] .tab[data-status='blocked'],
+[data-skin='dc-watchtower'] .tab[data-status='error'] {
+  border-color: rgba(255, 67, 87, 0.75);
+}
+
+/* ---------- panes: viewports ---------- */
+[data-skin='dc-watchtower'] .pane {
+  border: 1px solid #1d2b58;
+  border-radius: 14px;
+  background: var(--term);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+[data-skin='dc-watchtower'] .pane.is-focused,
+[data-skin='dc-watchtower'] .pane[data-active='true'] {
+  border-color: rgba(111, 157, 255, 0.75);
+  box-shadow: 0 0 0 1px rgba(47, 107, 255, 0.35), 0 0 26px rgba(47, 107, 255, 0.22), 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+[data-skin='dc-watchtower'] .pane[data-status='blocked'],
+[data-skin='dc-watchtower'] .pane[data-status='error'] {
+  border-color: rgba(255, 67, 87, 0.8);
+  animation: wt-pane-distress 1.8s ease-in-out infinite;
+}
+
+[data-skin='dc-watchtower'] .pane-head {
+  background: linear-gradient(180deg, #0f1c45, #0a1433);
+  border-bottom: 1px solid #1a2853;
+}
+
+[data-skin='dc-watchtower'] .pane[data-active='true'] .pane-head {
+  background: linear-gradient(180deg, #16296a, #0d1a45);
+  box-shadow: inset 0 -2px 0 var(--w-blue);
+}
+
+[data-skin='dc-watchtower'] .pane[data-status='blocked'] .pane-head,
+[data-skin='dc-watchtower'] .pane[data-status='error'] .pane-head {
+  background: linear-gradient(180deg, #3a0e1c, #200812);
+  box-shadow: inset 0 -2px 0 var(--red);
+}
+
+[data-skin='dc-watchtower'] .pane-title {
+  font: 500 14px/1 var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tx);
+}
+
+[data-skin='dc-watchtower'] .pane-msg,
+[data-skin='dc-watchtower'] .pane-cwd {
+  font-family: var(--font-mono);
+  color: var(--tx-3);
+}
+
+[data-skin='dc-watchtower'] .chip {
+  background: rgba(143, 196, 255, 0.14);
+  color: var(--w-sky);
+  border: 1px solid rgba(143, 196, 255, 0.3);
+}
+
+[data-skin='dc-watchtower'] .badge {
+  padding: 4px 10px;
+  font: 600 10.5px/1 var(--font-ui);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+[data-skin='dc-watchtower'] .badge-working {
+  background: rgba(47, 107, 255, 0.3);
+  color: #cfe0ff;
+  box-shadow: inset 0 0 0 1px rgba(111, 157, 255, 0.6);
+}
+[data-skin='dc-watchtower'] .badge-working::before {
+  background: var(--w-sky);
+}
+[data-skin='dc-watchtower'] .badge-blocked,
+[data-skin='dc-watchtower'] .badge-error {
+  background: var(--red);
+  color: #fff;
+}
+[data-skin='dc-watchtower'] .badge-blocked::before,
+[data-skin='dc-watchtower'] .badge-error::before {
+  background: #fff;
+}
+[data-skin='dc-watchtower'] .badge-blocked::after {
+  content: ' · Distress';
+}
+[data-skin='dc-watchtower'] .badge-done {
+  background: rgba(79, 220, 152, 0.2);
+  color: #9ff0c6;
+  box-shadow: inset 0 0 0 1px rgba(79, 220, 152, 0.55);
+}
+[data-skin='dc-watchtower'] .badge-idle {
+  background: rgba(93, 106, 140, 0.25);
+  color: var(--tx-2);
+}
+
+[data-skin='dc-watchtower'] .ask .ask-allow {
+  background: var(--green);
+  border-color: var(--green);
+  color: #03170c;
+}
+
+[data-skin='dc-watchtower'] .ask .ask-deny {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+[data-skin='dc-watchtower'] .gutter::after {
+  background: var(--w-blue-lt);
+}
+
+/* ---------- the footer: and a signal in the sky for whoever needs you ---------- */
+[data-skin='dc-watchtower'] .rail-footer {
+  position: relative;
+  height: var(--statusbar-height);
+  padding: 0 18px;
+  border-top: 1px solid #1a2853;
+  background: linear-gradient(180deg, rgba(5, 10, 30, 0.6), rgba(10, 22, 64, 0.85));
+  font: 600 11px/1 var(--font-ui);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tx-2);
+  overflow: visible;
+}
+
+[data-skin='dc-watchtower'] .rf-count[data-status='working'] {
+  color: var(--w-sky);
+}
+
+[data-skin='dc-watchtower'] .rf-count[data-status='done'] {
+  color: var(--green);
+}
+
+/* the noir signal: a yellow disc with a dark emblem-less centre, haloed */
+[data-skin='dc-watchtower'] .rf-count[data-status='blocked'] {
+  position: relative;
+  padding: 4px 12px 4px 30px;
+  border-radius: 999px;
+  background: var(--w-noir);
+  color: var(--w-signal);
+  box-shadow: 0 0 0 1px rgba(255, 210, 63, 0.45), 0 0 18px rgba(255, 210, 63, 0.35), 0 0 40px rgba(255, 210, 63, 0.18);
+  text-shadow: 0 0 8px rgba(255, 210, 63, 0.6);
+  animation: wt-signal 3s ease-in-out infinite;
+}
+
+[data-skin='dc-watchtower'] .rf-count[data-status='blocked']::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse 45% 22% at 50% 52%, var(--w-noir) 0 96%, transparent 100%),
+    radial-gradient(circle, #fff6c8 0 30%, var(--w-signal) 55%, #c99a00 100%);
+  box-shadow: 0 0 10px rgba(255, 210, 63, 0.9);
+}
+
+[data-skin='dc-watchtower'] .rail-footer .sb-help,
+[data-skin='dc-watchtower'] .rail-footer .sb-clock {
+  font: inherit;
+  color: var(--w-steel);
+}
+
+/* ---------- panels, palette and dialogs ---------- */
+[data-skin='dc-watchtower'] .agents,
+[data-skin='dc-watchtower'] .palette,
+[data-skin='dc-watchtower'] .help,
+[data-skin='dc-watchtower'] .menu {
+  background: linear-gradient(180deg, #0d1a40, #070f28);
+  border: 1px solid rgba(111, 157, 255, 0.45);
+  box-shadow: 0 0 30px rgba(47, 107, 255, 0.2), var(--e3);
+}
+
+[data-skin='dc-watchtower'] .agents-head,
+[data-skin='dc-watchtower'] .help h2,
+[data-skin='dc-watchtower'] .pal-group {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--w-sky);
+}
+
+[data-skin='dc-watchtower'] .palette li.is-active {
+  background: linear-gradient(90deg, rgba(47, 107, 255, 0.45), rgba(47, 107, 255, 0.1));
+  color: #fff;
+}
+
+[data-skin='dc-watchtower'] .view-banner {
+  background: var(--w-noir);
+  color: var(--w-signal);
+  border-bottom: 1px solid rgba(255, 210, 63, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* ---------- motion ---------- */
+@keyframes wt-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes wt-breathe {
+  50% { box-shadow: 0 0 0 5px rgba(111, 157, 255, 0.12), 0 0 16px var(--w-blue-lt); }
+}
+
+@keyframes wt-distress {
+  0% { box-shadow: 0 0 0 0 rgba(255, 67, 87, 0.75), 0 0 0 0 rgba(255, 67, 87, 0.4); }
+  70% { box-shadow: 0 0 0 9px rgba(255, 67, 87, 0), 0 0 0 16px rgba(255, 67, 87, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 67, 87, 0), 0 0 0 0 rgba(255, 67, 87, 0); }
+}
+
+@keyframes wt-pane-distress {
+  50% { box-shadow: 0 0 0 1px rgba(255, 67, 87, 0.5), 0 0 30px rgba(255, 67, 87, 0.35), 0 10px 30px rgba(0, 0, 0, 0.45); }
+}
+
+@keyframes wt-signal {
+  50% { box-shadow: 0 0 0 1px rgba(255, 210, 63, 0.7), 0 0 26px rgba(255, 210, 63, 0.55), 0 0 60px rgba(255, 210, 63, 0.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-skin='dc-watchtower'] * {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  [data-skin='dc-watchtower'] .rail-header {
+    height: 56px;
+  }
+  [data-skin='dc-watchtower'] .rail-when {
+    display: none;
+  }
+  [data-skin='dc-watchtower'] .rail-space-title {
+    font-size: 20px;
+  }
+  [data-skin='dc-watchtower'] .rail-space-title::before,
+  [data-skin='dc-watchtower'] .badge::after {
+    content: none;
+  }
+}
+
+/* the pane's name before its folder: the folder gives way first */
+[data-skin='dc-watchtower'] .pane-title {
+  flex: 0 0 auto;
+  max-width: 45%;
+}
+[data-skin='dc-watchtower'] .pane-cwd {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

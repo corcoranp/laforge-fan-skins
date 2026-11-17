@@ -1,0 +1,493 @@
+/* Mission Control (Avengers): a personal fan skin in the manner of the
+   Avengers' command room. Not for distribution; the characters and marks it
+   evokes belong to their owners. All drawing is original CSS. Layout: classic. */
+
+:root[data-skin='avengers-mission-control'] {
+  /* the skin's own colours */
+  --m-red: #c8202a;
+  --m-red-dk: #7c0f16;
+  --m-gold: #e8b23a;
+  --m-gold-lt: #ffd877;
+  --m-steel: #2a313b;
+  --m-steel-lt: #4a5462;
+  --m-arc: #6fe3ff;
+  --m-brush: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3px),
+    linear-gradient(180deg, #343c47 0%, #232930 55%, #1b2027 100%);
+
+  /* the forge's tokens */
+  --canvas: #0a0d11;
+  --side: #1b2027;
+  --sunken: #080a0d;
+  --card: #151a20;
+  --term: #0c0f13;
+  --hover: rgba(232, 178, 58, 0.1);
+  --press: rgba(232, 178, 58, 0.18);
+  --line: #39424e;
+  --line-2: #232a33;
+  --tx: #eef2f6;
+  --tx-2: #b9c3ce;
+  --tx-3: #7d8896;
+  --acc: var(--m-gold);
+  --acc-500: var(--m-gold-lt);
+  --acc-100: rgba(232, 178, 58, 0.18);
+  --acc-fill: var(--m-gold);
+  --on-acc: #140d00;
+  --ai: var(--m-arc);
+  --ai-600: #9aedff;
+  --ai-100: rgba(111, 227, 255, 0.22);
+  --ai-50: rgba(111, 227, 255, 0.1);
+  --red: #ff3b30;
+  --red-50: rgba(255, 59, 48, 0.16);
+  --amber: var(--m-gold);
+  --amber-50: rgba(232, 178, 58, 0.16);
+  --green: #6fd27a;
+  --todo: #6a7482;
+  --on-red: #ffffff;
+  --scrim: rgba(4, 6, 9, 0.72);
+  --e2: 0 4px 14px rgba(0, 0, 0, 0.55);
+  --e3: 0 14px 40px rgba(0, 0, 0, 0.7);
+  --shadow-tab: none;
+  --font-display: 'DIN Condensed', 'Avenir Next Condensed', 'Bahnschrift Condensed', 'Roboto Condensed', 'Arial Narrow', sans-serif;
+  --font-ui: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Menlo, Consolas, ui-monospace, monospace;
+  --radius-pane: 3px;
+  --radius-dialog: 4px;
+  --radius-card: 3px;
+  --radius-mono: 2px;
+  --radius-control: 2px;
+  --radius-button: 2px;
+  --radius-button-sm: 2px;
+  --radius-chip: 2px;
+  --topbar-height: 50px;
+  --statusbar-height: 30px;
+  --pane-head-height: 34px;
+  --work-gap: 10px;
+  --pane-gap: 6px;
+}
+
+[data-skin='avengers-mission-control'] body,
+[data-skin='avengers-mission-control'] .forge {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(111, 227, 255, 0.06), transparent 70%),
+    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.012) 0 2px, transparent 2px 22px),
+    repeating-linear-gradient(-60deg, rgba(255, 255, 255, 0.012) 0 2px, transparent 2px 22px),
+    #0a0d11;
+}
+
+/* ---------- the top bar: armour plating, a red-gold stripe ---------- */
+[data-skin='avengers-mission-control'] .topbar {
+  position: relative;
+  padding: 0 12px;
+  background: var(--m-brush);
+  border-bottom: 0;
+  box-shadow: inset 0 -1px 0 #000, 0 3px 0 var(--m-red), 0 5px 0 var(--m-gold), 0 8px 16px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+[data-skin='avengers-mission-control'] .brand {
+  position: relative;
+  gap: 10px;
+  padding: 0 18px 0 4px;
+  margin-right: 10px;
+  border-right: 1px solid #000;
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+/* the arc-reactor roundel in place of the mark */
+[data-skin='avengers-mission-control'] .brand svg {
+  opacity: 0;
+  width: 26px;
+}
+
+[data-skin='avengers-mission-control'] .brand::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 26px;
+  height: 26px;
+  margin-top: -13px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #ffffff 0 3px, #bff4ff 4px, var(--m-arc) 6px, rgba(111, 227, 255, 0.2) 7px 8px, #1a2b33 9px 10px, var(--m-arc) 11px 11.5px, #0d1418 12px);
+  box-shadow: 0 0 10px rgba(111, 227, 255, 0.75), 0 0 0 2px #59636f;
+  animation: mc-reactor 3.2s ease-in-out infinite;
+}
+
+[data-skin='avengers-mission-control'] .brand-name {
+  font: 700 19px/1 var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tx-2);
+}
+
+[data-skin='avengers-mission-control'] .brand-name b {
+  color: var(--m-gold);
+  font-weight: 700;
+}
+
+[data-skin='avengers-mission-control'] .brand-name::after {
+  content: 'Mission Control';
+  display: block;
+  margin-top: 2px;
+  font: 600 9.5px/1 var(--font-ui);
+  letter-spacing: 0.32em;
+  color: var(--m-red);
+}
+
+/* tabs: gold-edged plates, the active one red armour */
+[data-skin='avengers-mission-control'] .tab {
+  height: 32px;
+  padding: 0 16px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #3b4450, #262c35);
+  color: var(--tx-2);
+  font: 700 15px/1 var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+
+[data-skin='avengers-mission-control'] .tab:hover {
+  background: linear-gradient(180deg, #48525f, #2e353f);
+  color: var(--tx);
+}
+
+[data-skin='avengers-mission-control'] .tab.is-active {
+  background: linear-gradient(180deg, #e2343c 0%, var(--m-red) 45%, var(--m-red-dk) 100%);
+  color: #fff;
+  border-color: #000;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -3px 0 var(--m-gold);
+}
+
+[data-skin='avengers-mission-control'] .tab.is-active .tab-name,
+[data-skin='avengers-mission-control'] .tab.is-active .tab-name.is-auto,
+[data-skin='avengers-mission-control'] .tab.is-active .tab-actions button {
+  color: #fff;
+}
+
+[data-skin='avengers-mission-control'] .tab-count {
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--m-gold-lt);
+  font-family: var(--font-mono);
+}
+
+[data-skin='avengers-mission-control'] .tab[data-status='blocked']:not(.is-active),
+[data-skin='avengers-mission-control'] .tab[data-status='error']:not(.is-active) {
+  animation: mc-tab-alert 1.4s ease-in-out infinite;
+}
+
+[data-skin='avengers-mission-control'] .new-pane-btn,
+[data-skin='avengers-mission-control'] .cmd-btn {
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--m-gold-lt), var(--m-gold) 50%, #b88516);
+  color: #1a1000;
+  font: 700 14px/1 var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+[data-skin='avengers-mission-control'] .cmd-btn {
+  background: linear-gradient(180deg, #4b5562, #2b323b);
+  color: var(--tx);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+[data-skin='avengers-mission-control'] .cmd-btn kbd {
+  border: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--m-gold-lt);
+}
+
+[data-skin='avengers-mission-control'] .icon-btn {
+  color: var(--tx-2);
+  border-radius: 2px;
+}
+
+[data-skin='avengers-mission-control'] .icon-btn:hover {
+  background: rgba(232, 178, 58, 0.16);
+  color: var(--m-gold-lt);
+}
+
+[data-skin='avengers-mission-control'] .agents-btn.is-open {
+  background: var(--m-gold);
+  color: #1a1000;
+}
+
+/* ---------- panes: mission briefings ---------- */
+[data-skin='avengers-mission-control'] .pane {
+  position: relative;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background: var(--term);
+  box-shadow: 0 0 0 1px var(--m-steel-lt), 0 10px 24px rgba(0, 0, 0, 0.55);
+}
+
+/* corner brackets */
+[data-skin='avengers-mission-control'] .pane::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--mc-corner, var(--m-steel-lt)), var(--mc-corner, var(--m-steel-lt))) left top / 18px 2px,
+    linear-gradient(var(--mc-corner, var(--m-steel-lt)), var(--mc-corner, var(--m-steel-lt))) left top / 2px 18px,
+    linear-gradient(var(--mc-corner, var(--m-steel-lt)), var(--mc-corner, var(--m-steel-lt))) right top / 18px 2px,
+    linear-gradient(var(--mc-corner, var(--m-steel-lt)), var(--mc-corner, var(--m-steel-lt))) right top / 2px 18px,
+    linear-gradient(var(--mc-corner, var(--m-steel-lt)), var(--mc-corner, var(--m-steel-lt))) left bottom / 18px 2px,
+    linear-gradient(var(--mc-corner, var(--m-steel-lt)), var(--mc-corner, var(--m-steel-lt))) left bottom / 2px 18px,
+    linear-gradient(var(--mc-corner, var(--m-steel-lt)), var(--mc-corner, var(--m-steel-lt))) right bottom / 18px 2px,
+    linear-gradient(var(--mc-corner, var(--m-steel-lt)), var(--mc-corner, var(--m-steel-lt))) right bottom / 2px 18px;
+  background-repeat: no-repeat;
+}
+
+[data-skin='avengers-mission-control'] .pane.is-focused,
+[data-skin='avengers-mission-control'] .pane[data-active='true'] {
+  --mc-corner: var(--m-gold);
+  border-color: #000;
+  box-shadow: 0 0 0 1px var(--m-gold), 0 0 22px rgba(232, 178, 58, 0.18), 0 10px 24px rgba(0, 0, 0, 0.55);
+}
+
+[data-skin='avengers-mission-control'] .pane[data-status='blocked'],
+[data-skin='avengers-mission-control'] .pane[data-status='error'] {
+  --mc-corner: var(--red);
+  animation: mc-team-alert 1.4s ease-in-out infinite;
+}
+
+[data-skin='avengers-mission-control'] .pane-head {
+  position: relative;
+  background: var(--m-brush);
+  border-bottom: 2px solid #000;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 var(--m-steel-lt);
+}
+
+[data-skin='avengers-mission-control'] .pane[data-active='true'] .pane-head {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 4px 0 0 var(--m-red), inset 7px 0 0 var(--m-gold), 0 1px 0 var(--m-gold);
+  padding-left: 14px;
+}
+
+/* hazard stripes across a blocked briefing */
+[data-skin='avengers-mission-control'] .pane[data-status='blocked'] .pane-head,
+[data-skin='avengers-mission-control'] .pane[data-status='error'] .pane-head {
+  background:
+    repeating-linear-gradient(-45deg, rgba(255, 59, 48, 0.22) 0 10px, rgba(0, 0, 0, 0) 10px 20px),
+    var(--m-brush);
+}
+
+[data-skin='avengers-mission-control'] .pane-title {
+  font: 700 16px/1 var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tx);
+}
+
+[data-skin='avengers-mission-control'] .pane[data-active='true'] .pane-title {
+  color: var(--m-gold-lt);
+}
+
+[data-skin='avengers-mission-control'] .pane-cwd {
+  opacity: 0.7;
+}
+
+[data-skin='avengers-mission-control'] .pane-msg,
+[data-skin='avengers-mission-control'] .pane-cwd {
+  font-family: var(--font-mono);
+  color: var(--tx-3);
+}
+
+[data-skin='avengers-mission-control'] .chip {
+  background: #000;
+  color: var(--m-arc);
+  border: 1px solid rgba(111, 227, 255, 0.4);
+}
+
+[data-skin='avengers-mission-control'] .badge {
+  padding: 4px 9px 3px;
+  border-radius: 2px;
+  font: 700 12.5px/1 var(--font-display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid #000;
+}
+
+[data-skin='avengers-mission-control'] .badge-working {
+  background: var(--m-gold);
+  color: #1a1000;
+}
+[data-skin='avengers-mission-control'] .badge-working::before {
+  background: #1a1000;
+}
+[data-skin='avengers-mission-control'] .badge-blocked,
+[data-skin='avengers-mission-control'] .badge-error {
+  background: var(--red);
+  color: #fff;
+}
+[data-skin='avengers-mission-control'] .badge-blocked::before,
+[data-skin='avengers-mission-control'] .badge-error::before {
+  background: #fff;
+}
+[data-skin='avengers-mission-control'] .badge-blocked::after {
+  content: ' · Team alert';
+}
+[data-skin='avengers-mission-control'] .badge-done {
+  background: var(--green);
+  color: #031a06;
+}
+[data-skin='avengers-mission-control'] .badge-done::after {
+  content: ' · Debrief';
+}
+[data-skin='avengers-mission-control'] .badge-idle {
+  background: var(--m-steel-lt);
+  color: var(--tx);
+}
+[data-skin='avengers-mission-control'] .badge-idle::after {
+  content: ' · Standing by';
+}
+
+[data-skin='avengers-mission-control'] .ask .ask-allow {
+  background: var(--green);
+  border-color: #000;
+  color: #031a06;
+}
+
+[data-skin='avengers-mission-control'] .ask .ask-deny {
+  background: var(--red);
+  border-color: #000;
+  color: #fff;
+}
+
+[data-skin='avengers-mission-control'] .gutter::after {
+  background: var(--m-gold);
+}
+
+/* ---------- the footer: the command console strip ---------- */
+[data-skin='avengers-mission-control'] .statusbar {
+  background: var(--m-brush);
+  border-top: 0;
+  box-shadow: 0 -3px 0 var(--m-gold), 0 -5px 0 var(--m-red), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  font: 600 11.5px/1 var(--font-mono);
+  color: var(--tx-2);
+  letter-spacing: 0.04em;
+}
+
+[data-skin='avengers-mission-control'] .sb-session {
+  padding: 2px 8px;
+  background: linear-gradient(180deg, var(--m-gold-lt), var(--m-gold));
+  color: #1a1000;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+[data-skin='avengers-mission-control'] .sb-session::before {
+  content: '◉ ';
+  color: var(--m-red-dk);
+}
+
+[data-skin='avengers-mission-control'] .sb-tab.is-active {
+  color: #fff;
+  background: var(--m-red);
+  padding: 2px 6px;
+}
+
+[data-skin='avengers-mission-control'] .sb-counts {
+  color: var(--tx-2);
+}
+
+[data-skin='avengers-mission-control'] .sb-host,
+[data-skin='avengers-mission-control'] .sb-clock {
+  color: var(--m-gold-lt);
+}
+
+/* ---------- panels, palette and dialogs ---------- */
+[data-skin='avengers-mission-control'] .agents,
+[data-skin='avengers-mission-control'] .palette,
+[data-skin='avengers-mission-control'] .help,
+[data-skin='avengers-mission-control'] .menu {
+  background: linear-gradient(180deg, #1c222a, #12161b);
+  border: 1px solid #000;
+  box-shadow: 0 0 0 1px var(--m-gold), inset 0 3px 0 var(--m-red), var(--e3);
+}
+
+[data-skin='avengers-mission-control'] .agents-head,
+[data-skin='avengers-mission-control'] .help h2,
+[data-skin='avengers-mission-control'] .pal-group {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--m-gold);
+}
+
+[data-skin='avengers-mission-control'] .agent-row[data-status='blocked'] {
+  box-shadow: inset 3px 0 0 var(--red);
+}
+
+[data-skin='avengers-mission-control'] .palette li.is-active {
+  background: linear-gradient(90deg, rgba(200, 32, 42, 0.55), rgba(200, 32, 42, 0.12));
+  color: #fff;
+  box-shadow: inset 3px 0 0 var(--m-gold);
+}
+
+[data-skin='avengers-mission-control'] .view-banner {
+  background: var(--m-red-dk);
+  color: #fff;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* ---------- motion ---------- */
+@keyframes mc-reactor {
+  50% {
+    box-shadow: 0 0 18px rgba(111, 227, 255, 1), 0 0 0 2px #59636f;
+  }
+}
+
+@keyframes mc-team-alert {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px var(--red), 0 0 8px rgba(255, 59, 48, 0.25), 0 10px 24px rgba(0, 0, 0, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 2px var(--red), 0 0 30px rgba(255, 59, 48, 0.55), 0 10px 24px rgba(0, 0, 0, 0.55);
+  }
+}
+
+@keyframes mc-tab-alert {
+  50% {
+    background: linear-gradient(180deg, #6b1a1f, #3a0d10);
+    color: #fff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-skin='avengers-mission-control'] * {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  [data-skin='avengers-mission-control'] .brand-name::after {
+    content: none;
+  }
+  [data-skin='avengers-mission-control'] .badge::after {
+    content: none;
+  }
+}
+
+/* the pane's name before its folder: the folder gives way first */
+[data-skin='avengers-mission-control'] .pane-title {
+  flex: 0 0 auto;
+  max-width: 45%;
+}
+[data-skin='avengers-mission-control'] .pane-cwd {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
