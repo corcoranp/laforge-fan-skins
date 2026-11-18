@@ -302,12 +302,6 @@
   color: #fff;
 }
 
-[data-skin='pokemon-trainer'] .rail-new-space input {
-  border-radius: 4px;
-  border: 2px solid var(--p-ink);
-  background: var(--p-paper);
-  color: var(--p-text);
-}
 
 [data-skin='pokemon-trainer'] .rail-empty {
   color: #ffe0d8;
@@ -435,11 +429,10 @@
   font-weight: 800;
 }
 
-/* ---------- the header: the battle prompt ---------- */
-[data-skin='pokemon-trainer'] .rail-header {
-  height: 66px;
-  margin: 10px 10px 0;
-  padding: 0 14px;
+/* ---------- the title line: the battle prompt (rail arrangement), in a
+   dialogue box ---------- */
+[data-skin='pokemon-trainer'] .forge.layout-rail .rail-space-title {
+  padding: 5px 12px;
   border: 0;
   border-radius: 8px;
   background: var(--p-paper);
@@ -447,10 +440,10 @@
 }
 
 [data-skin='pokemon-trainer'] .rail-when {
-  align-items: flex-start;
-  padding-right: 14px;
-  margin-right: 4px;
-  border-right: 2px dotted var(--line-2);
+  align-items: baseline;
+  padding-left: 12px;
+  margin-left: 4px;
+  border-left: 2px dotted var(--line-2);
   font: 700 11px/1.25 var(--font-ui);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -458,12 +451,12 @@
 }
 
 [data-skin='pokemon-trainer'] .rail-time {
-  font-size: 17px;
+  font-size: 13px;
   color: var(--p-text);
 }
 
 [data-skin='pokemon-trainer'] .rail-space-title {
-  font: 800 20px/1.1 var(--font-ui);
+  font: 800 15px/1.1 var(--font-ui);
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--p-text);
@@ -788,15 +781,11 @@
 }
 
 @media (max-width: 640px) {
-  [data-skin='pokemon-trainer'] .rail-header {
-    height: 54px;
-    margin: 8px 8px 0;
-  }
   [data-skin='pokemon-trainer'] .rail-when {
     display: none;
   }
   [data-skin='pokemon-trainer'] .rail-space-title {
-    font-size: 15px;
+    font-size: 13px;
   }
   [data-skin='pokemon-trainer'] .rail-space-title::before,
   [data-skin='pokemon-trainer'] .rail-space-title::after {

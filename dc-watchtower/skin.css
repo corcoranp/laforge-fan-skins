@@ -301,12 +301,6 @@
   background: var(--w-glass);
 }
 
-[data-skin='dc-watchtower'] .rail-new-space input {
-  border-radius: 8px;
-  border-color: #2a3c75;
-  background: #050a1c;
-}
-
 /* the crew: members on watch, with a beacon when one is in trouble */
 [data-skin='dc-watchtower'] .crew-row {
   position: relative;
@@ -393,20 +387,13 @@
   color: var(--tx-3);
 }
 
-/* ---------- the header: the station's main display ---------- */
-[data-skin='dc-watchtower'] .rail-header {
-  height: 70px;
-  padding: 0 18px;
-  border-bottom: 1px solid #1a2853;
-  background: linear-gradient(180deg, rgba(10, 22, 64, 0.85), rgba(5, 10, 30, 0.6));
-  box-shadow: inset 0 -1px 0 rgba(111, 157, 255, 0.15);
-}
-
+/* ---------- the title line: the station's main display (both arrangements;
+   the sector name and clock show in the rail arrangement) ---------- */
 [data-skin='dc-watchtower'] .rail-when {
-  align-items: flex-start;
-  padding: 6px 14px 6px 0;
-  margin-right: 6px;
-  border-right: 1px solid #22356e;
+  align-items: baseline;
+  padding: 2px 0 2px 12px;
+  margin-left: 4px;
+  border-left: 1px solid #22356e;
   font: 600 10.5px/1.3 var(--font-ui);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -414,13 +401,14 @@
 }
 
 [data-skin='dc-watchtower'] .rail-time {
-  font: 500 19px/1.1 var(--font-display);
+  font: 500 15px/1.1 var(--font-display);
   letter-spacing: 0.08em;
   color: #fff;
 }
 
 [data-skin='dc-watchtower'] .rail-space-title {
-  font: 500 30px/1 var(--font-display);
+  border-left: 0;
+  font: 500 22px/1.1 var(--font-display);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #fff;
@@ -475,10 +463,12 @@
   color: var(--w-sky);
 }
 
-/* ---------- tabs: glass chips ---------- */
+/* ---------- tabs: glass chips, on the main display ---------- */
 [data-skin='dc-watchtower'] .topbar {
-  background: transparent;
-  border-bottom: 0;
+  height: 48px;
+  border-bottom: 1px solid #1a2853;
+  background: linear-gradient(180deg, rgba(10, 22, 64, 0.85), rgba(5, 10, 30, 0.6));
+  box-shadow: inset 0 -1px 0 rgba(111, 157, 255, 0.15);
 }
 
 [data-skin='dc-watchtower'] .tab {
@@ -771,13 +761,13 @@
     radial-gradient(ellipse 80% 50% at 10% -10%, rgba(212, 36, 53, 0.06), transparent 60%),
     linear-gradient(180deg, #f6f9ff 0%, #e6eefd 100%);
 }
-[data-skin='dc-watchtower'][data-mode='light'] .rail-header {
+[data-skin='dc-watchtower'][data-mode='light'] .topbar {
   border-bottom-color: #c9d6f2;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(234, 241, 255, 0.7));
   box-shadow: inset 0 -1px 0 rgba(47, 107, 255, 0.12);
 }
 [data-skin='dc-watchtower'][data-mode='light'] .rail-when {
-  border-right-color: #c9d6f2;
+  border-left-color: #c9d6f2;
 }
 [data-skin='dc-watchtower'][data-mode='light'] .rail-time,
 [data-skin='dc-watchtower'][data-mode='light'] .rail-space-title {
@@ -915,14 +905,11 @@
 }
 
 @media (max-width: 640px) {
-  [data-skin='dc-watchtower'] .rail-header {
-    height: 56px;
-  }
   [data-skin='dc-watchtower'] .rail-when {
     display: none;
   }
   [data-skin='dc-watchtower'] .rail-space-title {
-    font-size: 20px;
+    font-size: 17px;
   }
   [data-skin='dc-watchtower'] .rail-space-title::before,
   [data-skin='dc-watchtower'] .badge::after {

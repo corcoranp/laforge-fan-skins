@@ -6,10 +6,12 @@ and GAME FREAK inc.; the Avengers are trademarks of Marvel; the Justice League a
 are trademarks of DC Comics. Every drawing here is original CSS with system fonts: no official
 logos, sprites or artwork.
 
-| Skin | Layout | Mode | Theme |
+Every skin works with the spaces on top or in the rail; the skin only suggests one, and your `spaces` setting wins.
+
+| Skin | Suggests spaces | Mode | Theme |
 | --- | --- | --- | --- |
 | [pokemon-trainer](pokemon-trainer/) | rail | light | A trainer's handheld: seats as party slots with capsules and HP bars, "What will billing do?" |
-| [avengers-mission-control](avengers-mission-control/) | classic | dark | Gunmetal and red-gold command room, arc-reactor roundel, team alert on blocked |
+| [avengers-mission-control](avengers-mission-control/) | top | dark | Gunmetal and red-gold command room, arc-reactor roundel, team alert on blocked |
 | [dc-watchtower](dc-watchtower/) | rail | dark | An orbital station over the planet's limb, sector dots, distress beacons, a signal in the sky for "need you" |
 
 Install one into a forge:

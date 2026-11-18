@@ -423,33 +423,113 @@
   letter-spacing: 0.04em;
 }
 
-[data-skin='avengers-mission-control'] .sb-session {
-  padding: 2px 8px;
-  background: linear-gradient(180deg, var(--m-gold-lt), var(--m-gold));
-  color: #1a1000;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-}
-
-[data-skin='avengers-mission-control'] .sb-session::before {
-  content: '◉ ';
-  color: var(--m-red-dk);
-}
-
-[data-skin='avengers-mission-control'] .sb-tab.is-active {
-  color: #fff;
-  background: var(--m-red);
-  padding: 2px 6px;
-}
-
-[data-skin='avengers-mission-control'] .sb-counts {
-  color: var(--tx-2);
-}
-
 [data-skin='avengers-mission-control'] .sb-host,
 [data-skin='avengers-mission-control'] .sb-clock {
   color: var(--m-gold-lt);
+}
+
+/* ---------- the rail (when the spaces show there): the team roster, a
+   brushed-steel console with a gold and red edge ---------- */
+[data-skin='avengers-mission-control'] .rail {
+  background: var(--m-brush);
+  border-right: 0;
+  box-shadow: inset -3px 0 0 var(--m-gold), inset -5px 0 0 var(--m-red);
+}
+
+[data-skin='avengers-mission-control'] .rail-label,
+[data-skin='avengers-mission-control'] .rail-title {
+  font: 700 11px/1 var(--font-display);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--m-gold);
+}
+
+[data-skin='avengers-mission-control'] .rail-host {
+  font: 700 18px/1.1 var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tx);
+}
+
+[data-skin='avengers-mission-control'] .rail-space {
+  min-height: 30px;
+  margin: 2px 8px 2px 0;
+  border-radius: 0 2px 2px 0;
+  border-left: 3px solid transparent;
+  font: 700 13px/1 var(--font-display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+[data-skin='avengers-mission-control'] .rail-space:hover {
+  background: var(--hover);
+}
+
+[data-skin='avengers-mission-control'] .rail-space.is-active {
+  border-left-color: var(--m-gold);
+  background: linear-gradient(90deg, var(--m-red), var(--m-red-dk));
+  color: #fff;
+}
+
+[data-skin='avengers-mission-control'] .rail-space.is-active .rail-count {
+  color: var(--m-gold-lt);
+}
+
+[data-skin='avengers-mission-control'] .rail-space[data-status='blocked']:not(.is-active),
+[data-skin='avengers-mission-control'] .rail-space[data-status='error']:not(.is-active) {
+  border-left-color: var(--red);
+  color: var(--red);
+}
+
+[data-skin='avengers-mission-control'] .rail-add {
+  margin-right: 8px;
+  border: 1px dashed var(--line);
+  border-radius: 2px;
+  font: 700 11.5px/1 var(--font-display);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tx-2);
+}
+
+[data-skin='avengers-mission-control'] .crew-row {
+  margin-right: 8px;
+  border-radius: 0 2px 2px 0;
+}
+
+[data-skin='avengers-mission-control'] .crew-row.is-current {
+  background: rgba(232, 178, 58, 0.12);
+}
+
+[data-skin='avengers-mission-control'] .crew-name {
+  font: 700 13px/1.2 var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+[data-skin='avengers-mission-control'] .crew-word[data-status='blocked'],
+[data-skin='avengers-mission-control'] .crew-word[data-status='error'] {
+  color: var(--red);
+  font-weight: 700;
+}
+
+[data-skin='avengers-mission-control'] .rail-space-title {
+  border-left-color: var(--line);
+  font: 700 20px/1.1 var(--font-display);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--m-gold);
+}
+
+[data-skin='avengers-mission-control'] .rail-space-title::before {
+  content: 'Mission · ';
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: var(--tx-3);
+}
+
+[data-skin='avengers-mission-control'] .rail-when {
+  font-family: var(--font-mono);
+  color: var(--tx-2);
 }
 
 /* ---------- panels, palette and dialogs ---------- */
@@ -589,9 +669,6 @@
 }
 [data-skin='avengers-mission-control'][data-mode='light'] .statusbar {
   box-shadow: 0 -3px 0 #e8b23a, 0 -5px 0 var(--m-red), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-[data-skin='avengers-mission-control'][data-mode='light'] .sb-session {
-  background: linear-gradient(180deg, #ffd877, #e8b23a);
 }
 [data-skin='avengers-mission-control'][data-mode='light'] .agents,
 [data-skin='avengers-mission-control'][data-mode='light'] .palette,

@@ -1,7 +1,7 @@
 # Watchtower (DC): an unofficial fan skin for LaForge
 
-A skin in the manner of the Justice League's orbital Watchtower, in the rail
-layout, dark mode. A star field with the planet's blue limb glowing up from
+A skin in the manner of the Justice League's orbital Watchtower, with the spaces in
+the rail (or on top), dark mode. A star field with the planet's blue limb glowing up from
 below, a Metropolis-blue rail with a slowly turning station emblem
 ("Watchtower · Orbit"), spaces as station sectors, and the crew as members on
 watch. A blocked seat sends out a red distress beacon that pulses outward;

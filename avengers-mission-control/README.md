@@ -1,6 +1,6 @@
 # Mission Control (Avengers): an unofficial fan skin for LaForge
 
-A skin in the manner of the Avengers' command room, in the classic layout,
+A skin in the manner of the Avengers' command room, with the spaces on top (and a team roster rail when they show in the rail),
 dark mode. Brushed-gunmetal plating with a red and gold stripe, an
 arc-reactor roundel beside "LaForge / Mission Control", slanted armour-plate
 tabs (the active one red with a gold edge), and panes framed as mission

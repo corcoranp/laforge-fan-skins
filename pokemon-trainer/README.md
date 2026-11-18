@@ -1,6 +1,6 @@
 # Trainer HUD (Pokémon): an unofficial fan skin for LaForge
 
-A skin in the manner of a Pokémon trainer's handheld, in the rail layout,
+A skin in the manner of a Pokémon trainer's handheld, with the spaces in the rail (or on top),
 light mode. The rail is a red handheld with a lens and three status lights.
 Spaces are menu entries with a blinking ▶ cursor. The crew is your party:
 each seat is a slot card with a red-and-white capsule (it wobbles while
